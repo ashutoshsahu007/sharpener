@@ -65,9 +65,7 @@ const Header = () => {
             <div>
               <li key={Math.random}>
                 <h4>
-                  {item.candyName} {"   "}
-                  {item.description} {"    "}
-                  {item.price}
+                  {item.candyName} {item.description} {item.price}
                 </h4>
                 <button type="button">Buy 1</button>
                 <button type="button">Buy 2</button>
