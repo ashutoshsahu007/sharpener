@@ -1,4 +1,14 @@
+import Header from "./components/Layout/Header";
+import Meals from "./components/Meals/Meals";
+
 const App = () => {
-  return <h1>Hello Sahu </h1>;
+  return (
+    <>
+      <Header />
+      <main>
+        <Meals />
+      </main>
+    </>
+  );
 };
 export default App;
