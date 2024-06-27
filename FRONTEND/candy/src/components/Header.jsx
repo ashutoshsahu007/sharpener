@@ -67,9 +67,30 @@ const Header = () => {
                 <h4>
                   {item.candyName} {item.description} {item.price}
                 </h4>
-                <button type="button">Buy 1</button>
-                <button type="button">Buy 2</button>
-                <button type="button">Buy 3</button>
+                <button
+                  type="button"
+                  onClick={() => {
+                    console.log("Hello Sahu");
+                  }}
+                >
+                  Buy 1
+                </button>
+                <button
+                  type="button"
+                  onClick={() => {
+                    console.log("Hello Ashutosh");
+                  }}
+                >
+                  Buy 2
+                </button>
+                <button
+                  type="button"
+                  onClick={() => {
+                    console.log("Hello Duniya");
+                  }}
+                >
+                  Buy 3
+                </button>
               </li>
             </div>
           );
