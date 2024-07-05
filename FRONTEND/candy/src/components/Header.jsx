@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { useContext } from "react";
+import CartContext from "../store/cart-context";
 
 const Header = () => {
   const [value1, setValue1] = useState("");
@@ -6,7 +8,7 @@ const Header = () => {
   const [value3, setValue3] = useState("");
   const [items, setItems] = useState([]);
 
-  const Clicked = (event) => {
+  const Clicked = () => {
     setItems([
       ...items,
       {
@@ -15,6 +17,38 @@ const Header = () => {
         price: value3,
       },
     ]);
+    setValue1("");
+    setValue2("");
+    setValue3("");
+  };
+
+  const cartCtx = useContext(CartContext);
+
+  const addToCartHandler1 = (item, index) => {
+    cartCtx.addItem({
+      id: index,
+      name: item.candyName,
+      amount: 1,
+      price: +item.price,
+    });
+  };
+
+  const addToCartHandler2 = (item, index) => {
+    cartCtx.addItem({
+      id: index,
+      name: item.candyName,
+      amount: 2,
+      price: +item.price,
+    });
+  };
+
+  const addToCartHandler3 = (item, index) => {
+    cartCtx.addItem({
+      id: index,
+      name: item.candyName,
+      amount: 3,
+      price: +item.price,
+    });
   };
 
   return (
@@ -59,18 +93,19 @@ const Header = () => {
           Add
         </button>
       </span>
+
       <ul>
-        {items.map((item) => {
+        {items.map((item, index) => {
           return (
             <div>
-              <li key={Math.random}>
+              <li key={index}>
                 <h4>
                   {item.candyName} {item.description} {item.price}
                 </h4>
                 <button
                   type="button"
                   onClick={() => {
-                    console.log("Hello Sahu");
+                    addToCartHandler1(item, index);
                   }}
                 >
                   Buy 1
@@ -78,7 +113,7 @@ const Header = () => {
                 <button
                   type="button"
                   onClick={() => {
-                    console.log("Hello Ashutosh");
+                    addToCartHandler2(item, index);
                   }}
                 >
                   Buy 2
@@ -86,7 +121,7 @@ const Header = () => {
                 <button
                   type="button"
                   onClick={() => {
-                    console.log("Hello Duniya");
+                    addToCartHandler3(item, index);
                   }}
                 >
                   Buy 3
