@@ -20,6 +20,7 @@ function App() {
       if (!response.ok) {
         throw new Error("Something Went Wrong! ");
       }
+
       const data = await response.json();
 
       const loadedMovies = [];
