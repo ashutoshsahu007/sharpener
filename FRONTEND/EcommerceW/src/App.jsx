@@ -1,4 +1,7 @@
+import Header from "./components/Header/Header";
+import "bootstrap/dist/css/bootstrap.min.css";
+
 const App = () => {
-  return <h1>Hello Sahu</h1>;
+  return <Header />;
 };
 export default App;
